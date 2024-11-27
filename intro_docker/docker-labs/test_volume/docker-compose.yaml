@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:14
+    container_name: postgres_test
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: mibasededatos
+    ports:
+      - "5432:5432"
+    volumes:
+      - type: bind
+        source: D:/Users/USER/Desktop/Data Engineer/intro_docker/docker-labs/test_volume/volumen/postgres_data
+        target: /var/lib/postgresql/data
